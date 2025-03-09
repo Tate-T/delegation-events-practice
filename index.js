@@ -16,9 +16,9 @@ const pizzaData = [
   },
   {
     title: "Піца Маргарита",
-    photo: "https://kvadratsushi.com/wp-content/uploads/2018/06/Margarita_1200x800.jpg",
-    description:
-      "Базилік, Моцарела, Помідори, Соус",
+    photo:
+      "https://kvadratsushi.com/wp-content/uploads/2018/06/Margarita_1200x800.jpg",
+    description: "Базилік, Моцарела, Помідори, Соус",
     price: "40$",
   },
   {
@@ -30,14 +30,17 @@ const pizzaData = [
   },
 ];
 const pizzaMap = pizzaData.map((pizza) => {
-    return `<li>
+  return `<li class="item" >
             <h2 class="title">${pizza.title}</h2>
             <img src="${pizza.photo}" alt="" class="img">
             <p class="text">${pizza.description}</p>
             <p class="price">${pizza.price}</p>
-        </li>`
-})
-console.log(pizzaMap)
-const pizzaDom = pizzaMap.join("")
-const list = document.querySelector(".list")
+            <button type="button" class="btn" >Почитати детальніше</button>
+        </li>`;
+});
+console.log(pizzaMap);
+const pizzaDom = pizzaMap.join("");
+const list = document.querySelector(".list");
 list.innerHTML = pizzaDom;
+
+
