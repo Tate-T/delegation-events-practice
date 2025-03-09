@@ -43,4 +43,20 @@ const pizzaDom = pizzaMap.join("");
 const list = document.querySelector(".list");
 list.innerHTML = pizzaDom;
 
+const openButton = document.querySelector(".btn")
+const backdrop = document.querySelector(".backdrop")
+const closeButton = document.querySelector(".close-btn") 
+
+list.addEventListener("click", (e) => {
+  console.log(e.target)
+  if(e.target.nodeName === "BUTTON"){
+    backdrop.style.display = "block";
+    backdrop.style.pointerEvents = "visible";
+  }
+})
+
+closeButton.addEventListener("click", () => {
+  backdrop.style.display = "none";
+  backdrop.style.pointerEvents = "none";
+})
 
